@@ -10,14 +10,12 @@ RSpec.feature "Users can edit existing projects" do
   end
 
   scenario "with valid attributes" do
-    fill_in "Name",         with: "Atom"
-    fill_in "Description",  with: "Better than Sublime Text 3"
+    fill_in "Name", with: "Atom"
 
     click_button "Update Project"
 
     expect(page).to have_content "Project has been updated."
     expect(page).to have_content "Atom"
-    expect(page).to have_content "Better than Sublime Text 3"
   end
 
   scenario "with invalid attributes" do
