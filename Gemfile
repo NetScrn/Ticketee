@@ -23,4 +23,5 @@ end
 
 group :test do
   gem "capybara", "~> 2.6"
+  gem "factory_girl_rails"
 end
