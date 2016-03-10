@@ -12,7 +12,6 @@ RSpec.feature "Admins can manage a user's roles" do
   end
 
   scenario "when assigning roles to an existing user" do
-
     visit admin_user_path(user)
     click_link "Edit User"
 
@@ -25,5 +24,19 @@ RSpec.feature "Admins can manage a user's roles" do
     click_link user.email
     expect(page).to have_content "Internet Explorer: Viewer"
     expect(page).to have_content "Sublime Text 3: Manager"
+  end
+
+  scenario "when assign role to a new user" do
+    visit new_admin_user_path
+
+    fill_in "Email",    with: "newuser@ticketee.com"
+    fill_in "Password", with: "password"
+
+    select "Editor", from: "Internet Explorer"
+    click_button "Create User"
+
+    click_link "newuser@ticketee.com"
+    expect(page).to     have_content "Internet Explorer: Editor"
+    expect(page).not_to have_content "Sublime Text 3"
   end
 end
