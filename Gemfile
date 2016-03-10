@@ -14,17 +14,21 @@ gem "font-awesome-rails", "~> 4.5"
 gem "simple_form", "~> 3.2.0"
 gem "devise", "~> 3.5.5"
 gem "pundit", "~> 0.3.0"
+gem "carrierwave", "~> 0.10.0"
+
 
 group :development, :test do
   gem 'byebug'
   gem "rspec-rails", "~> 3.4.1"
 end
 
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pg'
 end
+
 
 group :test do
   gem "capybara", "~> 2.6"
