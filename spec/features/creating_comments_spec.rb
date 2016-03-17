@@ -32,6 +32,7 @@ RSpec.feature "Users can comment on tickets" do
 
   scenario "when changing a ticket's state" do
     FactoryGirl.create(:state, name: "Open")
+
     visit project_ticket_path(project, ticket)
     fill_in "Text", with: "This is a real issue"
     select "Open", from: "State"
@@ -40,6 +41,10 @@ RSpec.feature "Users can comment on tickets" do
     expect(page).to have_content "Comment has been created."
     within("#ticket .state") do
       expect(page).to have_content "Open"
+    end
+
+    within("#comments") do
+      expect(page).to have_content "state changed to Open"
     end
   end
 end
