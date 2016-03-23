@@ -36,7 +36,7 @@
     <% if @ticket.tags.any? %>
       <tr id="tags">
         <th>Tags:</th>
-        <td><%= render @ticket.tags %></td>
+        <td><%= render @ticket.tags, ticket: @ticket %></td>
       </tr>
     <% end %>
   </table>
@@ -49,7 +49,7 @@
       <% @ticket.attachments.each do |attachment| %>
         <p>
           <%= link_to File.basename(attachment.file.url),
-            attachment_path(attachment) %>
+                      attachment_path(attachment) %>
           (<%= number_to_human_size(attachment.file.size) %>)
         </p>
       <% end %>

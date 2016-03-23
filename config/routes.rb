@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   devise_for :users
   root "projects#index"
@@ -19,11 +20,20 @@ Rails.application.routes.draw do
   end
 
   resources :projects, only: [:index, :show, :edit, :update] do
-    resources :tickets
+    resources :tickets do
+      collection do
+        get :search
+      end
+    end
   end
 
   resources :tickets, only: [] do
     resources :comments, only: [:create]
+    resources :tags, only: [] do
+      member do
+        delete :remove
+      end
+    end
   end
 
   resources :attachments, only: [:new, :show]
