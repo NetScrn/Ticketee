@@ -1,5 +1,5 @@
 class CommentNotifier < ApplicationMailer
-  def create(comment, user)
+  def created(comment, user)
     @comment = comment
     @user = user
     @ticket = comment.ticket
