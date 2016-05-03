@@ -3,3 +3,10 @@ script: bundle exec rspec
 before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
+deploy:
+  provider: heroku
+  api_key:
+    secure: BJkuc25Au9e25NMNF9VuN0NAeU1TVI1q967lcPb6jRdnIdpTePMqZ3fCsTtU3n235QhIHOt9Wi6YcyWbLnAYtwPg4gvgAcmwQBAl4APtDzk6KGt81hukge+VTttBOzH1I775Gt650b2RqHpmO5LjTfvthjMZ3yX/ZFj9i6Ft6TzAOy+rRjyaxhSSYXkyUT2IezsDu7JkSatfPlC8q6PICvNaFw9qfgXL5kmqvoAb7bKEWqereMtFZKEwXp/Qj6xHGz/FmyAt6nDR8IazoS+EimfDY5+lsIRSVE3OWq5xYgx5STmAwSEFtBNSNuKYqv4N0wz3xTCy9Xw5Yozh5ujWF7vj8uiDro4mghvZB4UCTknF9dxUMnKdKYB7OvHw6c2QDTGIde6orlGDag2GUn3bN9Vc+DcXUi0NeiDPXdc8VptlTA1yVJrTKrHqZ5il+NtLgZVoXriqN//iI4Sm3AO/vX4ud03m9YHBI5A72cTJcBNBFQVFqppmV86wCNpicSc4FXWbCzNxy0DSgjRU2ZsX7VyKwSNvgXQFbzIbX71oTrMuHD/cQ4iXb2xvWd94cFDcXaOIXoSOI6ViO8V88gewfqp3SLZ24SyLdkPu4LKuV4GL8HV2+OcwoTqSa2N0vPpvxzmccNea8aEuH3FnXb4iYlEb9L1xXc/of4+IlIww7eA=
+  app: warm-wildwood-52107
+  on:
+    repo: NetScrn/Ticketee
