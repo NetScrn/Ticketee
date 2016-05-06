@@ -21,6 +21,7 @@ gem "fog", "~> 1.29.0"
 gem "rails_12factor", group: :production
 gem 'pg'
 gem "puma", group: :production
+gem "active_model_serializers", "~> 0.9.3"
 
 
 group :development, :test do
