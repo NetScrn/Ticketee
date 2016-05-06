@@ -19,6 +19,12 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    scope path: "/projects/:project_id", as: "project" do
+      resources :tickets
+    end
+  end
+
   resources :projects, only: [:index, :show, :edit, :update] do
     resources :tickets do
       collection do
