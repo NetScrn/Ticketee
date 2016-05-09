@@ -1,5 +1,9 @@
 
+require "heartbeat/application"
+
 Rails.application.routes.draw do
+  mount Heartbeat::Application, at: "/heartbeat"
+
   devise_for :users
   root "projects#index"
 
