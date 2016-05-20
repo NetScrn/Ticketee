@@ -13,7 +13,7 @@ development:
   adapter: postgresql
   database: ticketee_development
   username: sergey
-  password: 21062002s
+  password: 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,7 +22,7 @@ test:
   adapter: postgresql
   database: ticketee_test
   username: sergey
-  password: 21062002s
+  password: 
 
 production:
   <<: *default
